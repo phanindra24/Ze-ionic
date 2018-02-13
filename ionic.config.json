@@ -1,0 +1,8 @@
+{
+  "name": "rig",
+  "app_id": "912ca014",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
