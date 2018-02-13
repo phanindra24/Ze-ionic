@@ -4,9 +4,9 @@ import { IonicPage, NavController } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-content',
-  templateUrl: 'content.html'
+  templateUrl: 'alerts.html'
 })
-export class ContentPage {
+export class AlertsPage {
 
   constructor(public navCtrl: NavController) { }
 

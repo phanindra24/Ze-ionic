@@ -2,21 +2,21 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ComponentsModule } from '../../components/components.module';
-import { ContentPage } from './content';
+import { AlertsPage } from './alerts';
 // import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    ContentPage,
+    AlertsPage,
   ],
   imports: [
     ComponentsModule,
     // CommonModule,
-    IonicPageModule.forChild(ContentPage),
+    IonicPageModule.forChild(AlertsPage),
     TranslateModule.forChild()
   ],
   exports: [
-    ContentPage
+    AlertsPage
   ]
 })
-export class ContentPageModule { }
+export class AlertsPageModule { }
