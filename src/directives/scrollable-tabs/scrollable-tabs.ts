@@ -1,4 +1,4 @@
-import { Directive, AfterViewInit,Input, ElementRef, Renderer } from '@angular/core';
+import { Directive,Input, ElementRef, Renderer } from '@angular/core';
 import { Tabs, Tab } from 'ionic-angular';
 
 /**

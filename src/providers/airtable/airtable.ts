@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { Item } from '../../models/item';
 import { Api } from '../api/api';
-import { Observer } from 'rxjs/Observer';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()

@@ -1,0 +1,57 @@
+<!--
+  Generated template for the WatchlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>watchlist</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <single-select
+              [iconName]="'ios-calendar-outline'"
+              [optionsArray]="timeOptionsArray">
+            </single-select>
+          </ion-col>
+          <ion-col col-4>
+            <single-select
+              [iconName]="'md-settings'"
+              [optionsArray]="settingsOptions">
+            </single-select>
+          </ion-col>
+          <ion-col col-4>
+            <single-select
+              [iconName]="'md-arrow-down'"
+              [optionsArray]="settingsOptions">
+            </single-select>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <doughnut [elementId]="'container-weight'"
+                      [alertsCount]="100"
+                      [isGrayedGraph]="false"
+                      [alertsLabel]="'WEIGHT - WEIGHT TIME'"></doughnut>
+          </ion-col>
+          <ion-col col-6>
+            <doughnut [elementId]="'container-drill'"
+                      [alertsCount]="25"
+                      [isGrayedGraph]="false"
+                      [alertsLabel]="'STAND DRILL TIME'"
+                      [remainingAlertsCount]="75"></doughnut>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>

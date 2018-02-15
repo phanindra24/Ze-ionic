@@ -43,7 +43,9 @@ export class MyApp {
     { title: 'Menu', component: 'MenuPage' },
     { title: 'Settings', component: 'SettingsPage' },
     { title: 'Search', component: 'SearchPage' },
-    { title: 'ProcessEquip', component: 'ProcessEquipPage' }
+    { title: 'ProcessEquip', component: 'ProcessEquipPage' },
+    { title: 'WatchList', component: 'WatchlistPage' }
+    
     
   ]
 

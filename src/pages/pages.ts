@@ -8,4 +8,4 @@ export const MainPage = 'TabsPage';
 // The initial root pages for our tabs (remove if not using tabs)
 export const Tab1Root = 'AlertsPage';
 export const Tab2Root = 'ProcessEquipPage';
-export const Tab3Root = 'SettingsPage';
+export const Tab3Root = 'WatchlistPage';
