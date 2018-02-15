@@ -4,17 +4,20 @@ import { SingleSelectComponent } from './single-select/single-select';
 import { SubAlertsComponent } from './sub-alerts/sub-alerts';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from 'ionic-angular';
+import { TimelineComponent } from './timeline/timeline';
 
 
 @NgModule({
 	declarations: [DoughnutComponent,
     SingleSelectComponent,
-    SubAlertsComponent],
+    SubAlertsComponent,
+    TimelineComponent],
     imports: [CommonModule,
         IonicModule,
     ],
 	exports: [DoughnutComponent,
     SingleSelectComponent,
-    SubAlertsComponent]
+    SubAlertsComponent,
+    TimelineComponent]
 })
 export class ComponentsModule {}
