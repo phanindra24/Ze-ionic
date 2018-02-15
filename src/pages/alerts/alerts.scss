@@ -1,6 +1,4 @@
-page-content {
-    background-color: "black",
-  }
+
   .menu-button {
     background-color: #273142;
     height:40px;
@@ -30,3 +28,34 @@ page-content {
             right: -3px;
             border-radius: 100%;
         }
+
+        page-alerts {
+          font-family: GEInspiraSans;
+        }
+        
+        .total-alerts{
+          font-size: 44px;
+          letter-spacing: 0.04px;
+          color: #bbd6f2;
+          margin: 0;
+        }
+        
+        .total-alerts-label{
+          font-size: 12px;
+          margin: 0;
+          color: #aeaeae;
+        }
+        
+        .unacknowledged{
+          font-size: 44px;
+          letter-spacing: 0.04px;
+          margin: 0;
+          color: #273142;
+        }
+        
+        .unacknowledged-label{
+          font-size: 12px;
+          margin: 0;
+          color: #aeaeae;
+        }
+        

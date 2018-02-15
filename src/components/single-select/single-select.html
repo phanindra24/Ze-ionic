@@ -1,11 +1,12 @@
 <!-- Generated template for the SingleSelectComponent component -->
 <div>
-  <ion-list>
-    <ion-item>
-      <ion-label><ion-icon name="ios-calendar-outline"></ion-icon></ion-label>
-      <ion-select [(ngModel)]="selectedValue" interface="popover">
-        <ion-option *ngFor="let option of valuesMap" value="{{ option.value }}" [selected]="true">{{ option.label }}</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-</div>
+    <ion-list>
+      <ion-item class="select-item">
+        <ion-label><ion-icon name="{{ iconName }}"></ion-icon></ion-label>
+        <ion-select [(ngModel)]="selectedValue" interface="popover">
+          <ion-option *ngFor="let option of optionsArray" value="{{ option.value }}">{{ option.label }}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+  

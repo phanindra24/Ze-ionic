@@ -1,5 +1,7 @@
 <div [id]="elementId" style="display: block;" class="alerts-doughnut"></div>
 <div text-center class="alerts-label"
-     [ngClass]="isSelectedGraph === false ? 'alerts-label-font-disabled':
+     [ngClass]="isGrayedGraphLabel === false ? 'alerts-label-font-disabled':
      'alerts-label-font-enabled'">{{ alertsLabel }}</div>
-<div [ngClass]="isSelectedGraph === true ? 'selection-arrow':''"></div>
+<div [ngClass]="isSelectedGraph === true ? 'selection-arrow-line':''">
+  <ion-icon *ngIf="isSelectedGraph" class="selection-arrow" name="md-arrow-dropdown"></ion-icon>
+</div>

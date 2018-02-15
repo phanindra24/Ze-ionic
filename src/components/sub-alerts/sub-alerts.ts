@@ -16,8 +16,6 @@ export class SubAlertsComponent {
   @Input() value: number;
 
   constructor() {
-    console.log('Hello SubAlertsComponent Component');
-    this.text = 'Hello World';
   }
 
 }

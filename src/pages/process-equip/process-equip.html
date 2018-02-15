@@ -46,6 +46,6 @@
       </ion-col>
   
     </ion-row> -->
-    <timeline *ngFor="let process of processData" date={{process.date}} time={{process.time}} event={{process.event}}></timeline>
+    <timeline *ngFor="let process of processData" date={{process.date}} time={{process.fields.DateTime}} event={{process.fields.Process}}></timeline>
   </ion-grid>
 </ion-content>

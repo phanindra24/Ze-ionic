@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import * as HighCharts from 'highcharts';
 
 /**
@@ -13,7 +13,6 @@ import * as HighCharts from 'highcharts';
 })
 export class DoughnutComponent {
 
-  text: string;
   colors: any;
   @Input() alertsLabel: string;
   @Input() remainingAlertsLabel: string;
@@ -22,22 +21,24 @@ export class DoughnutComponent {
   @Input() remainingAlertsCount: number;
   @Input() startAngle: number;
   @Input() isSelectedGraph: boolean;
+  @Input() isGrayedGraph: boolean = false;
+  @Input() isGrayedGraphLabel: boolean = false;
+
 
   constructor() {
-    console.log('Hello DoughnutComponent Component');
-    this.text = 'Hello World';
   }
-  ngOnInit(){
+
+  ngOnInit() {
     this.colors = [];
-    if (this.isSelectedGraph){
+    if (this.isGrayedGraph === false) {
       this.colors = ['#bbd6f2', '#f5f5f5']
-    }else {
+    } else {
       this.colors = ['#E1ECF7', '#fbfbfb']
     }
   }
-  ngAfterViewInit(){
+
+  ngAfterViewInit() {
     let self = this;
-    console.log(typeof self.alertsCount);
     HighCharts.chart(this.elementId, {
       chart: {
         plotBackgroundColor: null,
@@ -53,7 +54,7 @@ export class DoughnutComponent {
         x: 0
       },
       tooltip: {
-        enabled:false
+        enabled: false
       },
       credits: {
         enabled: false
@@ -62,8 +63,8 @@ export class DoughnutComponent {
         pie: {
           allowPointSelect: false,
           colors: this.colors,
-          fillOpacity:0.4,
-          startAngle:this.startAngle,
+          fillOpacity: 0.4,
+          startAngle: this.startAngle,
           dataLabels: {
             enabled: false
           }
