@@ -17,9 +17,9 @@
 
 .toolbar-background-md {
     background-color: #273142;
-  
+
   }
-  
+
   .toolbar-content-md {
     background-color: #273142;
     flex-direction: row;
@@ -35,7 +35,7 @@
   .tabs-md .tabbar {
     background-color: #273142;
   }
-  
+
   .tab-button-text {
     color:white;
     size: 16sp;
@@ -43,3 +43,10 @@
     font-family: GEInspiraSans;
     letter-spacing: 0.57;
   }
+
+@font-face {
+  font-family: GEInspiraSans;
+  src:url("../assets/GE Inspira Sans/Software (TTF)/GEInspiraSans.ttf") format('trueType');
+  font-weight: normal;
+  font-style:normal;
+}
