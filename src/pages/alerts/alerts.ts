@@ -3,7 +3,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-content',
+  selector: 'page-alerts',
   templateUrl: 'alerts.html'
 })
 export class AlertsPage {
