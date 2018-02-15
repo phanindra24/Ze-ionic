@@ -16,52 +16,49 @@ import { Airtable } from '../../providers/providers';
   templateUrl: 'process-equip.html',
 })
 export class ProcessEquipPage {
+
+  public timeOptionSelectedValue:string;
+  public machineOptionSelectedValue:string;
+  public unitOptionSelectedValue:string;
+
+  public timeOptionsArray: any = [
+    {label:"12H", value:"12H"},
+    {label:"24H", value:"24H"}
+  ];
+
+  public machineOptions:any = [
+    {label:"Process", value:"process"},
+    {label:"Equipment", value:"equipment"}
+  ];
+
+  public unitOptions:any = [
+    {label:"Drilling", value:"drilling"},
+    {label:"TD Speed", value:"tdSpeed"}
+  ];
+
   processData: Item[];
-  // public processData:any =[
-  //   {
-  //     date:"date",
-  //     time:"time",
-  //     event:"myevent",
-  //   },
-  //   {
-  //     date:"date",
-  //     time:"time",
-  //     event:"myevent",
-  //   },
-  //   {
-  //     date:"date",
-  //     time:"time",
-  //     event:"myevent",
-  //   },
-  //   {
-  //     date:"date",
-  //     time:"time",
-  //     event:"myevent",
-  //   },
-  //   {
-  //     date:"date",
-  //     time:"time",
-  //     event:"myevent",
-  //   },
-  //   {
-  //     date:"date",
-  //     time:"time",
-  //     event:"myevent",
-  //   },
-  //   {
-  //     date:"date",
-  //     time:"time",
-  //     event:"myevent",
-  //   }
-  // ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public airtable: Airtable) {
   }
 
   ionViewDidLoad() {
-    this.airtable.query().subscribe(data => 
-      this.processData=data['records'])
-    // console.log(data));
+    this.airtable.query().subscribe(data =>{
+      this.processData=data['records'];
+    })
+
   }
+
+  timeSelectionChanged(value:string){
+    this.timeOptionSelectedValue = value
+  }
+
+  machineSelectionChanged(value:string){
+    this.machineOptionSelectedValue = value;
+  }
+
+  unitSelectionChanged(value:string){
+    this.unitOptionSelectedValue = value
+  }
+
 
 }

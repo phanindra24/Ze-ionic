@@ -5,19 +5,22 @@ import { SubAlertsComponent } from './sub-alerts/sub-alerts';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from 'ionic-angular';
 import { TimelineComponent } from './timeline/timeline';
+import { BulletGraphComponent } from './bullet-graph/bullet-graph';
 
 
 @NgModule({
 	declarations: [DoughnutComponent,
     SingleSelectComponent,
     SubAlertsComponent,
-    TimelineComponent],
+    TimelineComponent,
+    BulletGraphComponent],
     imports: [CommonModule,
         IonicModule,
     ],
 	exports: [DoughnutComponent,
     SingleSelectComponent,
     SubAlertsComponent,
-    TimelineComponent]
+    TimelineComponent,
+    BulletGraphComponent]
 })
 export class ComponentsModule {}

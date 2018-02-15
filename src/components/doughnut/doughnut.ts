@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import * as HighCharts from 'highcharts';
+
+declare var Highcharts;
 
 /**
  * Generated class for the DoughnutComponent component.
@@ -28,18 +29,30 @@ export class DoughnutComponent {
   constructor() {
   }
 
-  ngOnInit() {
+  grayedOutGraph(){
     this.colors = [];
     if (this.isGrayedGraph === false) {
       this.colors = ['#bbd6f2', '#f5f5f5']
     } else {
       this.colors = ['#E1ECF7', '#fbfbfb']
     }
+    console.log(this.colors);
+  }
+
+  ngOnInit() {
+    this.grayedOutGraph();
+  }
+
+  ngOnChanges(){
+    this.grayedOutGraph();
   }
 
   ngAfterViewInit() {
-    let self = this;
-    HighCharts.chart(this.elementId, {
+    this.drawGraph();
+  }
+
+  drawGraph(){
+    Highcharts.chart(this.elementId, {
       chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
@@ -75,7 +88,7 @@ export class DoughnutComponent {
         name: 'Alerts',
         innerSize: '85%',
         data: [
-          [this.alertsLabel, Number(self.alertsCount)],
+          [this.alertsLabel, Number(this.alertsCount)],
           [this.remainingAlertsLabel, Number(this.remainingAlertsCount)],
         ]
       }]

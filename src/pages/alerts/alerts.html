@@ -36,7 +36,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  
+
     <ion-grid>
       <ion-row>
         <ion-col col-6>
@@ -45,8 +45,9 @@
                     [remainingAlertsCount]="50"
                     [alertsLabel]="'PROCESS'"
                     [startAngle]="90"
-                    [isSelectedGraph]="true"
-                    [remainingAlertsLabel]="'EQUIPMENT'"></doughnut>
+                    [isSelectedGraph]="isTotalAlertsGraphSelected"
+                    [isGrayedGraph]="!isTotalAlertsGraphSelected"
+                    [remainingAlertsLabel]="'EQUIPMENT'" (click)='selectGraph("process");'></doughnut>
         </ion-col>
         <ion-col col-6>
           <doughnut [elementId]="'container-equipment'"
@@ -54,10 +55,10 @@
                     [remainingAlertsCount]="127"
                     [alertsLabel]="'EQUIPMENT'"
                     [startAngle]="((127/177)*360)+ 90"
-                    [isSelectedGraph]="false"
-                    [isGrayedGraph]="true"
+                    [isSelectedGraph]="!isTotalAlertsGraphSelected"
+                    [isGrayedGraph]="isTotalAlertsGraphSelected"
                     [isGrayedGraphLabel]="false"
-                    [remainingAlertsLabel]="'PROCESS'"></doughnut>
+                    [remainingAlertsLabel]="'PROCESS'" (click)='selectGraph("equipment");'></doughnut>
         </ion-col>
       </ion-row>
     </ion-grid>
