@@ -14,11 +14,19 @@ export class SingleSelectComponent {
 
   text: string;
   @Input() optionsArray:any;
-  @Input() iconName: string;
-  public selectedValue:string = '';
+  @Input() icons: any;
 
+  public selectedValue:string = '';
+  public iconSource:string="";
   constructor() {
   }
+  onChange(value) : void {
+   console.log(value);
+  console.log("here");
+    console.log(this.icons);
 
+this.iconSource=this.icons[value];
+    console.log(this.iconSource);
+}
 
 }

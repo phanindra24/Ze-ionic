@@ -16,27 +16,27 @@
 <ion-content padding>
     <ion-grid>
         <ion-row>
-          <ion-col col-4>
+          <ion-col col-3>
             <single-select
-              [iconName]="'ios-calendar-outline'"
+              [icons]='{"Date1":"../../assets/imgs/calendar.svg","Date2":"../../assets/imgs/calendar.svg"}'
               [optionsArray]="timeOptionsArray">
             </single-select>
           </ion-col>
-          <ion-col col-4>
+          <ion-col col-5>
             <single-select
-              [iconName]="'md-settings'"
+              [icons]='{"Process":"../../assets/imgs/process.svg","Equipment":"../../assets/imgs/equipment.svg"}'
               [optionsArray]="settingsOptions">
             </single-select>
           </ion-col>
           <ion-col col-4>
             <single-select
-              [iconName]="'md-arrow-down'"
-              [optionsArray]="settingsOptions">
+              [icons]='{"Drill":"../../assets/imgs/drill .svg","TDSpeed":"../../assets/imgs/speed.svg"}'
+              [optionsArray]="typeOptions">
             </single-select>
           </ion-col>
         </ion-row>
       </ion-grid>
-    
+
       <ion-grid>
         <ion-row>
           <ion-col col-6>

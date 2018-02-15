@@ -23,7 +23,12 @@
 </ion-header>
 
 <ion-content padding>
-    <single-select [iconName]="'ios-calendar-outline'" [optionsArray]="timeSelectValuesMap"></single-select>
+  <single-select
+    [icons]='{"Date1":"../../assets/imgs/calendar.svg",
+    "Date2":"../../assets/imgs/calendar.svg"}'
+
+    [optionsArray]="timeSelectValuesMap">
+  </single-select>
     <ion-grid>
       <ion-row>
         <ion-col>
@@ -36,7 +41,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  
+
     <ion-grid>
       <ion-row>
         <ion-col col-6>

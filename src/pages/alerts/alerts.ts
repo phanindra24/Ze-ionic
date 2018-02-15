@@ -7,9 +7,9 @@ import { IonicPage, NavController } from 'ionic-angular';
   templateUrl: 'alerts.html'
 })
 export class AlertsPage {
-  timeSelectValuesMap: any = [
-    {label:"Last 12H", value:"last12H"},
-    {label:"Last 24H", value:"last24H"},
+  public timeSelectValuesMap: any = [
+    {label:"Last 12H", value:"Date1"},
+    {label:"Last 24H", value:"Date2"},
   ];
   constructor(public navCtrl: NavController) { }
 
