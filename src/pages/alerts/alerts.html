@@ -62,7 +62,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <sub-alerts [text]="'Drilling'" [value]="98"></sub-alerts>
-    <sub-alerts [text]="'Tripping Out'" [value]="27"></sub-alerts>
-    <sub-alerts [text]="'Tripping In'" [value]="2"></sub-alerts>
+    <sub-alerts [text]="'Drilling'" [value]="currentAlertsData.process.drilling"></sub-alerts>
+    <sub-alerts [text]="'Tripping Out'" [value]="currentAlertsData.process.trippingOut"></sub-alerts>
+    <sub-alerts [text]="'Tripping In'" [value]="currentAlertsData.process.trippingIn"></sub-alerts>
 </ion-content>
