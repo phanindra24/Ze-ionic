@@ -29,16 +29,17 @@
     [icons]='{"last12H":"../../assets/imgs/calendar.svg",
     "last24H":"../../assets/imgs/calendar.svg"}'
 
-    [optionsArray]="timeSelectValuesMap">
+    [optionsArray]="timeSelectValuesMap"
+    (onChange)="durationChange($event)">
   </single-select>
     <ion-grid>
       <ion-row>
         <ion-col>
-          <p class="total-alerts">177</p>
+          <p class="total-alerts">{{currentAlertsData.total}}</p>
           <p class="total-alerts-label">TOTAL ALERTS</p>
         </ion-col>
         <ion-col text-right>
-          <p class="unacknowledged">10</p>
+          <p class="unacknowledged">{{currentAlertsData.unacknowledged}}</p>
           <p class="unacknowledged-label">UNACKNOWLEDGED</p>
         </ion-col>
       </ion-row>
@@ -47,9 +48,9 @@
     <ion-grid>
       <ion-row>
         <ion-col col-6>
-          <doughnut [elementId]="'container-total-alerts'"
-                    [alertsCount]="127"
-                    [remainingAlertsCount]="50"
+          <doughnut  *ngIf="drawGraph" [elementId]="'container-total-alerts'"
+                    [alertsCount]="currentAlertsData.process.total"
+                    [remainingAlertsCount]="currentAlertsData.equipment.total"
                     [alertsLabel]="'PROCESS'"
                     [startAngle]="90"
                     [isSelectedGraph]="isTotalAlertsGraphSelected"
@@ -57,9 +58,9 @@
                     [remainingAlertsLabel]="'EQUIPMENT'" (click)='selectGraph("process");'></doughnut>
         </ion-col>
         <ion-col col-6>
-          <doughnut [elementId]="'container-equipment'"
-                    [alertsCount]="50"
-                    [remainingAlertsCount]="127"
+          <doughnut *ngIf="drawGraph" [elementId]="'container-equipment'"
+                    [alertsCount]="currentAlertsData.equipment.total"
+                    [remainingAlertsCount]="currentAlertsData.process.total"
                     [alertsLabel]="'EQUIPMENT'"
                     [startAngle]="((127/177)*360)+ 90"
                     [isSelectedGraph]="!isTotalAlertsGraphSelected"
@@ -69,7 +70,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <sub-alerts [text]="'Drilling'" [value]="98"></sub-alerts>
-    <sub-alerts [text]="'Tripping Out'" [value]="27"></sub-alerts>
-    <sub-alerts [text]="'Tripping In'" [value]="2"></sub-alerts>
+    <sub-alerts [text]="'Drilling'" [value]="currentAlertsData.process.drilling"></sub-alerts>
+    <sub-alerts [text]="'Tripping Out'" [value]="currentAlertsData.process.trippingOut"></sub-alerts>
+    <sub-alerts [text]="'Tripping In'" [value]="currentAlertsData.process.trippingIn"></sub-alerts>
 </ion-content>

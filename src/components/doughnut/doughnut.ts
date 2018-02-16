@@ -14,7 +14,9 @@ declare var Highcharts;
 })
 export class DoughnutComponent {
 
+  // redrawGraph: any;
   colors: any;
+  chart: any;
   @Input() alertsLabel: string;
   @Input() remainingAlertsLabel: string;
   @Input() elementId: string;
@@ -24,35 +26,38 @@ export class DoughnutComponent {
   @Input() isSelectedGraph: boolean;
   @Input() isGrayedGraph: boolean = false;
   @Input() isGrayedGraphLabel: boolean = false;
+  // @Input() payload:any;
 
 
   constructor() {
   }
 
-  grayedOutGraph(){
+  grayedOutGraph() {
     this.colors = [];
     if (this.isGrayedGraph === false) {
       this.colors = ['#bbd6f2', '#f5f5f5']
     } else {
       this.colors = ['#E1ECF7', '#fbfbfb']
     }
-    console.log(this.colors);
   }
 
   ngOnInit() {
     this.grayedOutGraph();
+
   }
 
-  ngOnChanges(){
+  ngOnChanges() {
     this.grayedOutGraph();
   }
 
   ngAfterViewInit() {
     this.drawGraph();
+
   }
 
-  drawGraph(){
-    Highcharts.chart(this.elementId, {
+
+  drawGraph() {
+    this.chart = Highcharts.chart(this.elementId, {
       chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
@@ -93,5 +98,14 @@ export class DoughnutComponent {
         ]
       }]
     });
+  }
+
+  public redrawGraph(payload: any) {
+    this.chart.setTitle({ text: (this.alertsLabel === "PROCESS") ? payload.process.total : payload.equipment.total });
+    this.chart.series[0].setData([
+      [this.alertsLabel, Number((this.alertsLabel === "PROCESS") ? payload.process.total : payload.equipment.total)],
+      [this.remainingAlertsLabel, Number((this.alertsLabel === "PROCESS") ? payload.equipment.total:payload.process.total)],
+    ], false);// change to true instead of below line
+    this.chart.redraw();
   }
 }

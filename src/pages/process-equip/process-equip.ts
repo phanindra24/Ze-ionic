@@ -38,7 +38,7 @@ export class ProcessEquipPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public airtable: Airtable) {
   }
   ionViewDidLoad() {
-    this.airtable.query().subscribe(data =>{
+    this.airtable.getTimelineData().subscribe(data =>{
       this.processData=data['records'];
     })
 
