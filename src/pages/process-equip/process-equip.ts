@@ -16,6 +16,21 @@ import { Airtable } from '../../providers/providers';
   templateUrl: 'process-equip.html',
 })
 export class ProcessEquipPage {
+
+
+  public timeOptionsArray: any = [
+    {label:"12H", value:"Date1"},
+    {label:"24H", value:"Date2"}
+    ];
+
+  public settingsOptions:any = [
+    {label:"Process", value:"Process"},
+    {label:"Equipment", value:"Equipment"}
+  ];
+  public typeOptions:any =[
+    {label:"Drill", value:"Drill"},
+    {label:"TD Speed", value:"TDSpeed"}
+  ];
   processData: Item[];
   // public processData:any =[
   //   {
@@ -57,11 +72,9 @@ export class ProcessEquipPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public airtable: Airtable) {
   }
-
   ionViewDidLoad() {
-    this.airtable.query().subscribe(data => 
+    this.airtable.query().subscribe(data =>
       this.processData=data['records'])
     // console.log(data));
   }
-
 }
