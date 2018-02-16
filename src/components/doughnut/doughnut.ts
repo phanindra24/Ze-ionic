@@ -14,7 +14,9 @@ declare var Highcharts;
 })
 export class DoughnutComponent {
 
+  // redrawGraph: any;
   colors: any;
+  chart:any;
   @Input() alertsLabel: string;
   @Input() remainingAlertsLabel: string;
   @Input() elementId: string;
@@ -24,6 +26,7 @@ export class DoughnutComponent {
   @Input() isSelectedGraph: boolean;
   @Input() isGrayedGraph: boolean = false;
   @Input() isGrayedGraphLabel: boolean = false;
+  // @Input() payload:any;
 
 
   constructor() {
@@ -36,11 +39,11 @@ export class DoughnutComponent {
     } else {
       this.colors = ['#E1ECF7', '#fbfbfb']
     }
-    console.log(this.colors);
   }
 
   ngOnInit() {
     this.grayedOutGraph();
+    
   }
 
   ngOnChanges(){
@@ -49,10 +52,12 @@ export class DoughnutComponent {
 
   ngAfterViewInit() {
     this.drawGraph();
+   
   }
 
+
   drawGraph(){
-    Highcharts.chart(this.elementId, {
+    this.chart= Highcharts.chart(this.elementId, {
       chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
@@ -93,5 +98,15 @@ export class DoughnutComponent {
         ]
       }]
     });
+  }
+
+  public redrawGraph(){
+    this.chart.setTitle({text:  this.alertsCount});
+
+    this.chart.series[0].setData([
+      [this.alertsLabel, Number(this.alertsCount)],
+      [this.remainingAlertsLabel, Number(this.remainingAlertsCount)],
+    ],true);
+    // this.chart.redraw();
   }
 }

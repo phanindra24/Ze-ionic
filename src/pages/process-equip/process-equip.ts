@@ -42,7 +42,7 @@ export class ProcessEquipPage {
   }
 
   ionViewDidLoad() {
-    this.airtable.query().subscribe(data =>{
+    this.airtable.getTimelineData().subscribe(data =>{
       this.processData=data['records'];
     })
 
