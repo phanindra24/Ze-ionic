@@ -37,21 +37,21 @@
     <ion-row>
       <ion-col col-3>
         <single-select
-          [icons]='{"Date1":"../../assets/imgs/calendar.png","Date2":"../../assets/imgs/calendar.png"}'
+          [icons]='{"Date1":"assets/imgs/calendar.png","Date2":"assets/imgs/calendar.png"}'
           [optionsArray]="timeOptionsArray"
           (onChange)="timeSelectionChanged($event)">
         </single-select>
       </ion-col>
       <ion-col col-5>
         <single-select
-          [icons]='{"Process":"../../assets/imgs/process.png","Equipment":"../../assets/imgs/equipment.png"}'
+          [icons]='{"Process":"assets/imgs/process.png","Equipment":"assets/imgs/equipment.png"}'
           [optionsArray]="settingsOptions"
           (onChange)="machineSelectionChanged($event)">
         </single-select>
       </ion-col>
       <ion-col col-4>
         <single-select
-          [icons]='{"Drill":"../../assets/imgs/drill.png","TDSpeed":"../../assets/imgs/speed.png"}'
+          [icons]='{"Drill":"assets/imgs/drill.png","TDSpeed":"assets/imgs/speed.png"}'
           [optionsArray]="typeOptions"
           (onChange)="unitSelectionChanged($event)">
         </single-select>
