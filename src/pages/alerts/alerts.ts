@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { Component, ViewChildren, QueryList } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { Airtable } from '../../providers/providers';
 import { DoughnutComponent } from '../../components/doughnut/doughnut';
@@ -26,7 +26,7 @@ export class AlertsPage {
     },
     equipment: {
       total: 50,
-      Maintainance: 50,
+      maintainance: 50,
     }
   };
 
@@ -42,7 +42,7 @@ export class AlertsPage {
     },
     equipment: {
       total: 50,
-      Maintainance: 50,
+      maintainance: 50,
     }
   },
   {
@@ -57,7 +57,7 @@ export class AlertsPage {
     },
     equipment: {
       total: 100,
-      Maintainance: 100,
+      maintainance: 100,
     }
   }
   ]
@@ -74,7 +74,10 @@ export class AlertsPage {
   constructor(public navCtrl: NavController, public airtable: Airtable) { }
 
   public selectGraph(graph: string) {
-    this.isTotalAlertsGraphSelected = graph === 'process';
+    this.isTotalAlertsGraphSelected = graph === 'PROCESS';
+    this.doughnuts.forEach(doughnut =>
+      doughnut.reColorGraph(graph)
+    )
   }
 
   ionViewDidLoad() {
@@ -89,12 +92,12 @@ export class AlertsPage {
 
   durationChange(value: string) {
     if (value === "last12H") {
-      this.currentAlertsData=this.alertsData[0]
+      this.currentAlertsData = this.alertsData[0]
       this.doughnuts.forEach(doughnut =>
         doughnut.redrawGraph(this.alertsData[0])
       )
-    }else{
-      this.currentAlertsData=this.alertsData[1];
+    } else {
+      this.currentAlertsData = this.alertsData[1];
       this.doughnuts.forEach(doughnut =>
         doughnut.redrawGraph(this.alertsData[1])
       )
