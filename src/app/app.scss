@@ -34,17 +34,24 @@
  font-weight:bold;
 font-family:GEInspiraSans;
     font-size:24px;
+    letter-spacing:0.57px;
   }
   .tabs-md .tabbar {
     background-color: #273142;
   }
-
+  .tabs-md .tab-button[aria-selected=true] {
+      font-weight: 900;
+}
   .tab-button-text {
     color:white;
     size: 16sp;
     height: 18dp;
     font-family: GEInspiraSans;
     letter-spacing: 0.57;
+  }
+  .tabs-md[tabsHighlight="true"] .tab-highlight {
+      background-color: #bbd6f2;
+      height:5%;
   }
 
 @font-face {
