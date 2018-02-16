@@ -68,6 +68,7 @@ export class DoughnutComponent {
         text: this.alertsCount,
         align: 'center',
         verticalAlign: 'middle',
+        style:this.isSelectedGraph ?{fontWeight:'bold'}:{fontWeight:'normal'},
         y: 0,
         x: 0
       },
@@ -119,6 +120,9 @@ export class DoughnutComponent {
 
   public reColorGraph(type: string) {
     this.chart.update({
+      title: {
+        style:(type == this.alertsLabel) ?{fontWeight:'bold'}:{fontWeight:'normal'},
+      },
       plotOptions: {
         pie: {
           colors: (type == this.alertsLabel) ? ['#bbd6f2', '#f5f5f5'] : ['#E1ECF7', '#fbfbfb'],

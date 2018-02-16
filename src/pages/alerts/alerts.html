@@ -24,14 +24,18 @@
 </ion-header>
 
 
-<ion-content padding>
-  <single-select
-    [icons]='{"last12":"assets/imgs/calendar.png",
-    "last24":"assets/imgs/calendar.png"}'
-
-    [optionsArray]="timeSelectValuesMap"
-    (onChange)="durationChange($event)">
-  </single-select>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <single-select
+          [icons]='{"last12H":"assets/imgs/calendar.png","last24H":"assets/imgs/calendar.png"}'
+          [optionsArray]="timeSelectValuesMap"
+          (onChange)="durationChange($event)">
+        </single-select>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
     <ion-grid>
       <ion-row>
         <ion-col>
@@ -67,8 +71,6 @@
   <ng-template #equipmentSubAlert>
     <div>
       <sub-alerts [text]="'Maintanance'" [value]="currentAlertsData.equipment.maintainance"></sub-alerts>
-      <!-- <sub-alerts [text]="'Tripping Out'" [value]="currentAlertsData.process.trippingOut"></sub-alerts> -->
-      <!-- <sub-alerts [text]="'Tripping In'" [value]="currentAlertsData.process.trippingIn"></sub-alerts> -->
     </div>
   </ng-template>
 </ion-content>
