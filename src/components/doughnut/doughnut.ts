@@ -101,11 +101,29 @@ export class DoughnutComponent {
   }
 
   public redrawGraph(payload: any) {
-    this.chart.setTitle({ text: (this.alertsLabel === "PROCESS") ? payload.process.total : payload.equipment.total });
-    this.chart.series[0].setData([
-      [this.alertsLabel, Number((this.alertsLabel === "PROCESS") ? payload.process.total : payload.equipment.total)],
-      [this.remainingAlertsLabel, Number((this.alertsLabel === "PROCESS") ? payload.equipment.total:payload.process.total)],
-    ], false);// change to true instead of below line
-    this.chart.redraw();
+    this.chart.update({
+      title: {
+        text: (this.alertsLabel === "PROCESS") ? payload.process.total : payload.equipment.total
+      },
+      series: [{
+        type: 'pie',
+        name: 'Alerts',
+        innerSize: '85%',
+        data: [
+          [this.alertsLabel, Number((this.alertsLabel === "PROCESS") ? payload.process.total : payload.equipment.total)],
+          [this.remainingAlertsLabel, Number((this.alertsLabel === "PROCESS") ? payload.equipment.total : payload.process.total)],
+        ]
+      }]
+    })
+  }
+
+  public reColorGraph(type: string) {
+    this.chart.update({
+      plotOptions: {
+        pie: {
+          colors: (type == this.alertsLabel) ? ['#bbd6f2', '#f5f5f5'] : ['#E1ECF7', '#fbfbfb'],
+        }
+      },
+    })
   }
 }

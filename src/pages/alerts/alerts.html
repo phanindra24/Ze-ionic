@@ -8,9 +8,9 @@
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title class="page-title" >
-      <div >
-      RIG 1</div>
+    <ion-title class="page-title">
+      <div>
+        RIG 1</div>
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only class="notifications">
@@ -45,32 +45,30 @@
       </ion-row>
     </ion-grid>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col col-6>
-          <doughnut  *ngIf="drawGraph" [elementId]="'container-total-alerts'"
-                    [alertsCount]="currentAlertsData.process.total"
-                    [remainingAlertsCount]="currentAlertsData.equipment.total"
-                    [alertsLabel]="'PROCESS'"
-                    [startAngle]="90"
-                    [isSelectedGraph]="isTotalAlertsGraphSelected"
-                    [isGrayedGraph]="!isTotalAlertsGraphSelected"
-                    [remainingAlertsLabel]="'EQUIPMENT'" (click)='selectGraph("process");'></doughnut>
-        </ion-col>
-        <ion-col col-6>
-          <doughnut *ngIf="drawGraph" [elementId]="'container-equipment'"
-                    [alertsCount]="currentAlertsData.equipment.total"
-                    [remainingAlertsCount]="currentAlertsData.process.total"
-                    [alertsLabel]="'EQUIPMENT'"
-                    [startAngle]="((127/177)*360)+ 90"
-                    [isSelectedGraph]="!isTotalAlertsGraphSelected"
-                    [isGrayedGraph]="isTotalAlertsGraphSelected"
-                    [isGrayedGraphLabel]="false"
-                    [remainingAlertsLabel]="'PROCESS'" (click)='selectGraph("equipment");'></doughnut>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <doughnut *ngIf="drawGraph" [elementId]="'container-total-alerts'" [alertsCount]="currentAlertsData.process.total" [remainingAlertsCount]="currentAlertsData.equipment.total"
+          [alertsLabel]="'PROCESS'" [startAngle]="90" [isSelectedGraph]="isTotalAlertsGraphSelected" [isGrayedGraph]="!isTotalAlertsGraphSelected"
+          [remainingAlertsLabel]="'EQUIPMENT'" (click)='selectGraph("PROCESS");'></doughnut>
+      </ion-col>
+      <ion-col col-6>
+        <doughnut *ngIf="drawGraph" [elementId]="'container-equipment'" [alertsCount]="currentAlertsData.equipment.total" [remainingAlertsCount]="currentAlertsData.process.total"
+          [alertsLabel]="'EQUIPMENT'" [startAngle]="((127/177)*360)+ 90" [isSelectedGraph]="!isTotalAlertsGraphSelected" [isGrayedGraph]="isTotalAlertsGraphSelected"
+          [isGrayedGraphLabel]="false" [remainingAlertsLabel]="'PROCESS'" (click)='selectGraph("EQUIPMENT");'></doughnut>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="isTotalAlertsGraphSelected; else equipmentSubAlert">
     <sub-alerts [text]="'Drilling'" [value]="currentAlertsData.process.drilling"></sub-alerts>
     <sub-alerts [text]="'Tripping Out'" [value]="currentAlertsData.process.trippingOut"></sub-alerts>
     <sub-alerts [text]="'Tripping In'" [value]="currentAlertsData.process.trippingIn"></sub-alerts>
+  </div>
+  <ng-template #equipmentSubAlert>
+    <div>
+      <sub-alerts [text]="'Maintanance'" [value]="currentAlertsData.equipment.maintainance"></sub-alerts>
+      <!-- <sub-alerts [text]="'Tripping Out'" [value]="currentAlertsData.process.trippingOut"></sub-alerts> -->
+      <!-- <sub-alerts [text]="'Tripping In'" [value]="currentAlertsData.process.trippingIn"></sub-alerts> -->
+    </div>
+  </ng-template>
 </ion-content>
