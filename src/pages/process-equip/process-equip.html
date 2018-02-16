@@ -68,7 +68,7 @@
       </ion-col>
 
     </ion-row>
-    <timeline *ngFor="let process of processData" date={{process.date}} time={{process.fields.DateTime}} event={{process.fields.Process}}></timeline>
+    <timeline *ngFor="let process of processData" [date]="process.fields.DateTime |  date" [time]="process.fields.DateTime |  date:'HH:mm'" event={{process.fields.Process}}></timeline>
   </ion-grid>
 
   <ion-grid *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'TDSpeed'">
