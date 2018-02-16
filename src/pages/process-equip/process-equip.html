@@ -38,25 +38,28 @@
       <ion-col col-3>
         <single-select
           [icons]='{"Date1":"../../assets/imgs/calendar.svg","Date2":"../../assets/imgs/calendar.svg"}'
-          [optionsArray]="timeOptionsArray">
+          [optionsArray]="timeOptionsArray"
+          (onChange)="timeSelectionChanged($event)">
         </single-select>
       </ion-col>
       <ion-col col-5>
         <single-select
           [icons]='{"Process":"../../assets/imgs/process.svg","Equipment":"../../assets/imgs/equipment.svg"}'
-          [optionsArray]="settingsOptions">
+          [optionsArray]="settingsOptions"
+          (onChange)="machineSelectionChanged($event)">
         </single-select>
       </ion-col>
       <ion-col col-4>
         <single-select
           [icons]='{"Drill":"../../assets/imgs/drill .svg","TDSpeed":"../../assets/imgs/speed.svg"}'
-          [optionsArray]="typeOptions">
+          [optionsArray]="typeOptions"
+          (onChange)="unitSelectionChanged($event)">
         </single-select>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-grid>
-    <!-- <ion-row style="color:black;  height: auto;">
+  <ion-grid *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'Drill'">
+    <ion-row style="color:black;  height: auto;">
       <ion-col col-2 >
       </ion-col>
       <ion-col col-1 class="my-col-1">
@@ -67,7 +70,21 @@
       <ion-col col-9>
       </ion-col>
 
-    </ion-row> -->
+    </ion-row>
     <timeline *ngFor="let process of processData" date={{process.date}} time={{process.fields.DateTime}} event={{process.fields.Process}}></timeline>
+  </ion-grid>
+
+  <ion-grid *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'TDSpeed'">
+    <ion-row>
+      <ion-col col-12>
+        <bullet-graph [containerID]="'container'"
+                      [title]="'RPM'"
+                      [low]="150"
+                      [medium]="225"
+                      [high]="300"
+                      [current]="275"
+                      [optimal]="250"></bullet-graph>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>

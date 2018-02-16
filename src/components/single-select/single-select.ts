@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 /**
  * Generated class for the SingleSelectComponent component.
@@ -15,18 +15,22 @@ export class SingleSelectComponent {
   text: string;
   @Input() optionsArray:any;
   @Input() icons: any;
+  @Output() onChange = new EventEmitter<string>();
+
 
   public selectedValue:string = '';
   public iconSource:string="";
   constructor() {
   }
-  onChange(value) : void {
+  optionChange(value) : void {
    console.log(value);
   console.log("here");
     console.log(this.icons);
 
 this.iconSource=this.icons[value];
     console.log(this.iconSource);
+    this.onChange.emit(value);
+
 }
 
 }

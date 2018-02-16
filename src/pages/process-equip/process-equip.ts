@@ -16,7 +16,9 @@ import { Airtable } from '../../providers/providers';
   templateUrl: 'process-equip.html',
 })
 export class ProcessEquipPage {
-
+ public timeOptionSelectedValue:string;
+  public machineOptionSelectedValue:string;
+  public unitOptionSelectedValue:string;
 
   public timeOptionsArray: any = [
     {label:"12H", value:"Date1"},
@@ -77,4 +79,16 @@ export class ProcessEquipPage {
       this.processData=data['records'])
     // console.log(data));
   }
+  timeSelectionChanged(value:string){
+    this.timeOptionSelectedValue = value
+  }
+
+  machineSelectionChanged(value:string){
+    this.machineOptionSelectedValue = value;
+  }
+
+  unitSelectionChanged(value:string){
+    this.unitOptionSelectedValue = value
+  }
+
 }

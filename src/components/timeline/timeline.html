@@ -1,11 +1,13 @@
 <!-- Generated template for the TimelineComponent component -->
 <ion-row >
   <ion-col col-2  >
-    <div style="align-self:end;text-align:end">
+    <div style="align-self:end;text-align:end;margin-top:4%;">
+    <span style="align-self:end;text-align:end">
       <div class="date">
       {{date}}
       </div>
-      <div class="time">{{time}} </div>
+      <span class="time">{{time}} </span>
+    </span>
     </div>
   </ion-col>
   <ion-col col-1 class="my-col-1">
@@ -16,6 +18,8 @@
 
   </ion-col>
   <ion-col col-9 class="event">
+    <div style="margin-top:4%">
     {{event}}
+    </div>
   </ion-col>
 </ion-row>

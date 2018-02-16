@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import * as HighCharts from 'highcharts';
+declare var Highcharts;
 
 /**
  * Generated class for the DoughnutComponent component.
@@ -39,7 +39,7 @@ export class DoughnutComponent {
 
   ngAfterViewInit() {
     let self = this;
-    HighCharts.chart(this.elementId, {
+    Highcharts.chart(this.elementId, {
       chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
