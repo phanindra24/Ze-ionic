@@ -16,13 +16,19 @@ export class SingleSelectComponent {
   @Input() optionsArray:any;
   @Input() iconName: string;
   @Output() onChange = new EventEmitter<string>();
-  public selectedValue:string = '';
+  public selectedValue:string;
 
   constructor() {
   }
 
   selectChange(value){
+    console.log(value);
     this.onChange.emit(value);
+  }
+
+  ngAfterViewInit(){
+    this.selectedValue = this.optionsArray[0].value;
+    this.onChange.emit(this.selectedValue);
   }
 
 }
