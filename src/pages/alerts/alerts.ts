@@ -10,11 +10,25 @@ import { DoughnutComponent } from '../../components/doughnut/doughnut';
 })
 export class AlertsPage {
 
-  @ViewChildren(DoughnutComponent) doughnuts:QueryList<DoughnutComponent>;
+  @ViewChildren(DoughnutComponent) doughnuts: QueryList<DoughnutComponent>;
 
   drawGraph: boolean = false;
-  
-  currentAlertsData: any = {};
+
+  currentAlertsData: any = {
+    dateTime: "12",
+    total: 177,
+    unacknowledged: 10,
+    process: {
+      total: 127,
+      drilling: 98,
+      trippingOut: 27,
+      trippingIn: 2
+    },
+    equipment: {
+      total: 50,
+      Maintainance: 50,
+    }
+  };
 
   alertsData: any = [{
     dateTime: "12",
@@ -68,22 +82,23 @@ export class AlertsPage {
       console.log(data);
     })
     this.currentAlertsData = this.alertsData[0];
-    this.drawGraph=true;
+    this.drawGraph = true;
 
   }
 
 
   durationChange(value: string) {
-    // this.drawGraph=false;
-    console.log(value);
-    // this.selectedDuration = (value === "last12H");
-    this.currentAlertsData = (value === "last12H") ? this.alertsData[0] : this.alertsData[1];
-    // this.drawGraph=false;
-    // this.drawGraph=true;
-    this.doughnuts.forEach(doughnut=>
-    doughnut.redrawGraph()
-    )
-    // this.doughnuts[1].redrawGraph();
+    if (value === "last12H") {
+      this.currentAlertsData=this.alertsData[0]
+      this.doughnuts.forEach(doughnut =>
+        doughnut.redrawGraph(this.alertsData[0])
+      )
+    }else{
+      this.currentAlertsData=this.alertsData[1];
+      this.doughnuts.forEach(doughnut =>
+        doughnut.redrawGraph(this.alertsData[1])
+      )
+    }
   }
 
 }
