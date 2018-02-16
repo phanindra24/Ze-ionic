@@ -2,12 +2,10 @@
 <div>
     <ion-list>
       <ion-item class="select-item">
-        <ion-label><ion-icon name="{{ iconName }}"></ion-icon></ion-label>
+        <ion-label><img src={{iconSource}} class="icon-option"></ion-label>
         <ion-select [(ngModel)]="selectedValue" interface="popover"
-                    (ionChange)="selectChange($event)">
-          <ion-option *ngFor="let option of optionsArray" value="{{ option.value }}">
-            {{ option.label }}
-          </ion-option>
+                    (ionChange)="optionChange($event)">
+          <ion-option *ngFor="let option of optionsArray" value="{{ option.value }}">{{ option.label }}</ion-option>
         </ion-select>
       </ion-item>
     </ion-list>

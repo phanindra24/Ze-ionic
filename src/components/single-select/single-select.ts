@@ -14,21 +14,23 @@ export class SingleSelectComponent {
 
   text: string;
   @Input() optionsArray:any;
-  @Input() iconName: string;
+  @Input() icons: any;
   @Output() onChange = new EventEmitter<string>();
-  public selectedValue:string;
 
+
+  public selectedValue:string = '';
+  public iconSource:string="";
   constructor() {
   }
+  optionChange(value) : void {
+   console.log(value);
+  console.log("here");
+    console.log(this.icons);
 
-  selectChange(value){
-    console.log(value);
+this.iconSource=this.icons[value];
+    console.log(this.iconSource);
     this.onChange.emit(value);
-  }
 
-  ngAfterViewInit(){
-    this.selectedValue = this.optionsArray[0].value;
-    this.onChange.emit(this.selectedValue);
-  }
+}
 
 }

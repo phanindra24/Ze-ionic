@@ -8,8 +8,9 @@
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title class="page-title">
-      RIG 1
+    <ion-title class="page-title" >
+      <div >
+      RIG 1</div>
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only class="notifications">
@@ -22,8 +23,14 @@
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
-    <single-select [iconName]="'ios-calendar-outline'" [optionsArray]="timeSelectValuesMap"></single-select>
+  <single-select
+    [icons]='{"Date1":"../../assets/imgs/calendar.svg",
+    "Date2":"../../assets/imgs/calendar.svg"}'
+
+    [optionsArray]="timeSelectValuesMap">
+  </single-select>
     <ion-grid>
       <ion-row>
         <ion-col>

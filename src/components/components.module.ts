@@ -11,6 +11,7 @@ import { BulletGraphComponent } from './bullet-graph/bullet-graph';
 @NgModule({
 	declarations: [DoughnutComponent,
     SingleSelectComponent,
+BulletGraphComponent,
     SubAlertsComponent,
     TimelineComponent,
     BulletGraphComponent],

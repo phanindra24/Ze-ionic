@@ -34,31 +34,44 @@
     <ion-row>
       <ion-col col-3>
         <single-select
-          [iconName]="'ios-calendar-outline'"
+          [icons]='{"Date1":"../../assets/imgs/calendar.svg","Date2":"../../assets/imgs/calendar.svg"}'
           [optionsArray]="timeOptionsArray"
           (onChange)="timeSelectionChanged($event)">
         </single-select>
       </ion-col>
       <ion-col col-5>
         <single-select
-          [iconName]="'md-settings'"
-          [optionsArray]="machineOptions"
+          [icons]='{"Process":"../../assets/imgs/process.svg","Equipment":"../../assets/imgs/equipment.svg"}'
+          [optionsArray]="settingsOptions"
           (onChange)="machineSelectionChanged($event)">
         </single-select>
       </ion-col>
       <ion-col col-4>
         <single-select
-          [iconName]="'md-arrow-down'"
-          [optionsArray]="unitOptions" (onChange)="unitSelectionChanged($event)">
+          [icons]='{"Drill":"../../assets/imgs/drill .svg","TDSpeed":"../../assets/imgs/speed.svg"}'
+          [optionsArray]="typeOptions"
+          (onChange)="unitSelectionChanged($event)">
         </single-select>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-grid *ngIf="machineOptionSelectedValue === 'process' && unitOptionSelectedValue === 'drilling'">
+  <ion-grid *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'Drill'">
+    <ion-row style="color:black;  height: auto;">
+      <ion-col col-2 >
+      </ion-col>
+      <ion-col col-1 class="my-col-1">
+        <ion-icon name="arrow-dropup" style="margin-bottom:-7px;color:#d8d8d8;"></ion-icon>
+        <div class="line" style="margin-top:-7px;"> &nbsp;</div>
+
+      </ion-col>
+      <ion-col col-9>
+      </ion-col>
+
+    </ion-row>
     <timeline *ngFor="let process of processData" date={{process.date}} time={{process.fields.DateTime}} event={{process.fields.Process}}></timeline>
   </ion-grid>
 
-  <ion-grid *ngIf="machineOptionSelectedValue === 'equipment' && unitOptionSelectedValue === 'tdSpeed'">
+  <ion-grid *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'TDSpeed'">
     <ion-row>
       <ion-col col-12>
         <bullet-graph [containerID]="'container'"

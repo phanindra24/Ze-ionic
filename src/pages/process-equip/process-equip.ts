@@ -16,31 +16,27 @@ import { Airtable } from '../../providers/providers';
   templateUrl: 'process-equip.html',
 })
 export class ProcessEquipPage {
-
-  public timeOptionSelectedValue:string;
+ public timeOptionSelectedValue:string;
   public machineOptionSelectedValue:string;
   public unitOptionSelectedValue:string;
 
   public timeOptionsArray: any = [
-    {label:"12H", value:"12H"},
-    {label:"24H", value:"24H"}
-  ];
+    {label:"12H", value:"Date1"},
+    {label:"24H", value:"Date2"}
+    ];
 
-  public machineOptions:any = [
-    {label:"Process", value:"process"},
-    {label:"Equipment", value:"equipment"}
+  public settingsOptions:any = [
+    {label:"Process", value:"Process"},
+    {label:"Equipment", value:"Equipment"}
   ];
-
-  public unitOptions:any = [
-    {label:"Drilling", value:"drilling"},
-    {label:"TD Speed", value:"tdSpeed"}
+  public typeOptions:any =[
+    {label:"Drill", value:"Drill"},
+    {label:"TD Speed", value:"TDSpeed"}
   ];
-
   processData: Item[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public airtable: Airtable) {
   }
-
   ionViewDidLoad() {
     this.airtable.query().subscribe(data =>{
       this.processData=data['records'];
