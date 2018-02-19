@@ -55,7 +55,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-grid *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'Drill'">
+  <!-- <ion-grid *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'Drill'">
     <ion-row style="color:black;  height: auto;">
       <ion-col col-2 >
       </ion-col>
@@ -69,7 +69,15 @@
 
     </ion-row>
     <timeline *ngFor="let process of processData" [date]="process.fields.DateTime |  date" [time]="process.fields.DateTime |  date:'HH:mm'" event={{process.fields.Process}}></timeline>
-  </ion-grid>
+  </ion-grid> --> 
+  <div *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'Drill'">
+      <div>  <ion-icon name="code" class="invalid-image"></ion-icon></div>
+      
+      <div class="invalid-content">
+         Still under development
+         </div>
+     
+  </div>
 
   <ion-grid *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'TDSpeed'">
     <ion-row>
@@ -84,4 +92,20 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <div *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'TDSpeed'">
+      <div>  <ion-icon name="code" class="invalid-image"></ion-icon>
+      </div>
+      
+      <div class="invalid-content">
+         Still under development
+         </div>  </div>
+  <div *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'Drill'">
+      
+      <div>  <ion-icon name="code" class="invalid-image"></ion-icon></div>
+      
+ <div class="invalid-content">
+    Still under development
+    </div>
+
+  </div>
 </ion-content>

@@ -41,13 +41,18 @@ font-family:GEInspiraSans;
   }
   .tabs-md .tab-button[aria-selected=true] {
       font-weight: 900;
+      width:30px;
 }
-  .tab-button-text {
+  .tabs-md .tab-button-text {
     color:white;
-    size: 16sp;
-    height: 18dp;
+    font-size: 18px;
+    height: 18px;
+    width:140px;
     font-family: GEInspiraSans;
-    letter-spacing: 0.57;
+    align-content: center;
+  }
+  .tab-button{
+    align-content: center;
   }
   .tabs-md[tabsHighlight="true"] .tab-highlight {
       background-color: #bbd6f2;

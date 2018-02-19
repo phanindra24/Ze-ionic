@@ -36,6 +36,7 @@ export class DoughnutComponent {
     this.colors = [];
     if (this.isGrayedGraph === false) {
       this.colors = ['#bbd6f2', '#f5f5f5']
+      
     } else {
       this.colors = ['#E1ECF7', '#fbfbfb']
     }
@@ -69,8 +70,8 @@ export class DoughnutComponent {
         align: 'center',
         verticalAlign: 'middle',
         style:this.isSelectedGraph ?{fontWeight:'bold'}:{fontWeight:'normal'},
-        y: 0,
-        x: 0
+        y: 8,
+        x: 0.5
       },
       tooltip: {
         enabled: false

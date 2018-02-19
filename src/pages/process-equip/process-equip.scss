@@ -42,3 +42,24 @@ page-process-equip {
   height:10%;
   color:#d8d8d8;
   }
+  .invalid {
+    position: fixed;
+    top: 50%;
+    left:40%;
+    height: 25%;
+    width:25%;
+    align-items: center;
+
+
+  }
+  .invalid-image{
+    margin-left:25%;
+    font-size :200px;
+  }
+  .invalid-content {
+    margin-left:28%;
+    font-family: GEInspiraSans;
+    font-size: 16px;
+    letter-spacing: 0.28px;
+
+  }

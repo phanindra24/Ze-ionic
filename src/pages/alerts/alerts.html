@@ -36,7 +36,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-    <ion-grid>
+    <ion-grid style="padding-left:16px;padding-right:16px">
       <ion-row>
         <ion-col>
           <p class="total-alerts">{{currentAlertsData.total}}</p>
@@ -49,7 +49,7 @@
       </ion-row>
     </ion-grid>
 
-  <ion-grid>
+  <ion-grid >
     <ion-row>
       <ion-col col-6>
         <doughnut *ngIf="drawGraph" [elementId]="'container-total-alerts'" [alertsCount]="currentAlertsData.process.total" [remainingAlertsCount]="currentAlertsData.equipment.total"
@@ -63,13 +63,13 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <div *ngIf="isTotalAlertsGraphSelected; else equipmentSubAlert">
+  <div *ngIf="isTotalAlertsGraphSelected; else equipmentSubAlert" style="padding-left:16px;">
     <sub-alerts [text]="'Drilling'" [value]="currentAlertsData.process.drilling"></sub-alerts>
     <sub-alerts [text]="'Tripping Out'" [value]="currentAlertsData.process.trippingOut"></sub-alerts>
     <sub-alerts [text]="'Tripping In'" [value]="currentAlertsData.process.trippingIn"></sub-alerts>
   </div>
   <ng-template #equipmentSubAlert>
-    <div>
+    <div style="padding-left:16px;">
       <sub-alerts [text]="'Maintanance'" [value]="currentAlertsData.equipment.maintainance"></sub-alerts>
     </div>
   </ng-template>
