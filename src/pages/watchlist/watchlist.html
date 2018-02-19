@@ -36,26 +36,29 @@
           <ion-col col-3>
             <single-select
               [icons]='{"Date1":"assets/imgs/calendar.png","Date2":"assets/imgs/calendar.png"}'
-              [optionsArray]="timeOptionsArray">
+              [optionsArray]="timeOptionsArray"
+              (onChange)="timeSelectionChanged($event)">
             </single-select>
           </ion-col>
           <ion-col col-5>
             <single-select
               [icons]='{"Process":"assets/imgs/process.png","Equipment":"assets/imgs/equipment.png"}'
-              [optionsArray]="settingsOptions">
+              [optionsArray]="settingsOptions"
+              (onChange)="machineSelectionChanged($event)">
             </single-select>
           </ion-col>
           <ion-col col-4>
             <single-select
               [icons]='{"Drill":"assets/imgs/drill.png","TDSpeed":"assets/imgs/speed.png"}'
-              [optionsArray]="typeOptions">
+              [optionsArray]="typeOptions"
+              (onChange)="unitSelectionChanged($event)">
             </single-select>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
     <ion-item>
-      <ion-grid>
+      <ion-grid *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'Drill'">
         <ion-row>
           <ion-col col-6>
             <doughnut [elementId]="'container-weight'"
@@ -72,6 +75,34 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+      <div *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'TDSpeed'">
+        <div>
+          <img src="assets/imgs/Empty.png" class="invalid-image">
+        </div>
+
+        <div class="invalid-content">
+          WORK IN PROGRESS
+        </div>
+      </div>
+      <div *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'TDSpeed'">
+        <div>
+          <img src="assets/imgs/Empty.png" class="invalid-image">
+        </div>
+
+        <div class="invalid-content">
+          WORK IN PROGRESS
+        </div>  </div>
+      <div *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'Drill'">
+
+        <div>
+          <img src="assets/imgs/Empty.png" class="invalid-image">
+        </div>
+
+        <div class="invalid-content">
+          WORK IN PROGRESS
+        </div>
+
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>
