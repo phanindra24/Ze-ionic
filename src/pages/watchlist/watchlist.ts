@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Airtable } from '../../providers/providers';
+import { DoughnutComponent } from '../../components/doughnut/doughnut';
 
 /**
  * Generated class for the WatchlistPage page.
@@ -16,6 +17,9 @@ import { Airtable } from '../../providers/providers';
 })
 export class WatchlistPage {
 
+  @ViewChildren(DoughnutComponent) doughnuts: QueryList<DoughnutComponent>;
+
+  public timeOptionSelectedValue:string;
   watchlistData: any = [
     {
       metric: "WEIGHT - WEIGHT TIME",
@@ -47,15 +51,37 @@ export class WatchlistPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public airtable: Airtable) {
   }
   ionViewDidLoad() {
+   this.getData()
+
+  }
+  getData(){
     this.airtable.getWatchlist().subscribe(data => {
-      console.log(data['records'])
+      console.log(data)
+      if(this.timeOptionSelectedValue==="Date1"){
       this.watchlistData[0].metric = data['records'][0].fields.Metric;
       this.watchlistData[0].percentage = data['records'][0].fields.Percentage;
       this.watchlistData[1].metric = data['records'][1].fields.Metric;
       this.watchlistData[1].percentage = data['records'][1].fields.Percentage;
       this.watchlistData[1].rem = 100 - this.watchlistData[1].percentage;
-    })
+      }else{
+        this.watchlistData[0].metric = data['records'][2].fields.Metric;
+        this.watchlistData[0].percentage = data['records'][2].fields.Percentage;
+        this.watchlistData[1].metric = data['records'][3].fields.Metric;
+        this.watchlistData[1].percentage = data['records'][3].fields.Percentage;
+        this.watchlistData[1].rem = 100 - this.watchlistData[1].percentage;
+      }
 
+      this.doughnuts.forEach(doughnut =>
+        doughnut.redrawGraphWatchlist(this.watchlistData)
+      )
+
+    })
+  }
+
+  timeSelectionChangedWatchlist(value:string){
+    this.timeOptionSelectedValue = value
+    this.getData();
+    console.log("here")
   }
   onChangeCol2(value): void {
     console.log('Course Value', value)

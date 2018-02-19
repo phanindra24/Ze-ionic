@@ -34,7 +34,8 @@
           <ion-col col-3>
             <single-select
               [icons]='{"Date1":"../../assets/imgs/calendar.svg","Date2":"../../assets/imgs/calendar.svg"}'
-              [optionsArray]="timeOptionsArray">
+              [optionsArray]="timeOptionsArray"
+              (onChange)="timeSelectionChangedWatchlist($event)">
             </single-select>
           </ion-col>
           <ion-col col-5>

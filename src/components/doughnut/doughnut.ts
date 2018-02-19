@@ -126,4 +126,13 @@ export class DoughnutComponent {
       },
     })
   }
+
+  public redrawGraphWatchlist(payload: any) {
+    this.chart.update({
+      title: {
+        text: (this.alertsLabel === "WEIGHT - WEIGHT TIME") ? payload[0].percentage : payload[1].percentage
+      },
+    })
+  }
+ 
 }

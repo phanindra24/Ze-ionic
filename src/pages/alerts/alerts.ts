@@ -100,6 +100,10 @@ export class AlertsPage {
   }
 
   ionViewDidLoad() {
+  this.getData();
+  }
+
+  getData(){
     this.airtable.getAlerts().subscribe(data => {
       this.inputAlerts = data['records'];
 
@@ -133,6 +137,7 @@ export class AlertsPage {
 
 
   durationChange(value: string) {
+    this.getData();
     if (value === "last12H") {
       this.currentAlertsData = this.alertsData[0]
       this.doughnuts.forEach(doughnut =>
@@ -145,5 +150,6 @@ export class AlertsPage {
       )
     }
   }
+
 
 }
