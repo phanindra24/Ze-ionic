@@ -3,17 +3,23 @@ single-select {
 }
 
 ion-item.select-item {
-    padding-left: 0;
-    ion-label {
-      margin-right: 0;
-    }
-    ion-select {
-      padding-left: 0;
-      max-width: unset;
-    }
+  padding-left: 0;
+  ion-label {
+    margin-right: 0;
   }
- .icon-option{
- height:24px;
+  ion-select {
+    padding-left: 0;
+    max-width: unset;
+  }
+}
+.icon-option{
+  height:24px;
+}
 
+.extra-margin-removal{
+  margin-bottom: 0;
+}
 
- }
+.radio .radio-icon {
+  display: none;
+}
