@@ -5,7 +5,8 @@
       <ion-label><img src={{iconSource}} class="icon-option"></ion-label>
       <ion-select [(ngModel)]="selectedValue" interface="popover"
                   (ionChange)="optionChange($event)">
-        <ion-option *ngFor="let option of optionsArray" value="{{ option.value }}">{{ option.label }}</ion-option>
+        <ion-option *ngFor="let option of optionsArray"
+                    value="{{ option.value }}">{{ option.label }}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
