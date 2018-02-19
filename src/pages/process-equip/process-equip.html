@@ -78,12 +78,12 @@
         <ion-row>
           <ion-col col-12>
             <bullet-graph [containerID]="'container'"
-                          [title]="'RPM'"
-                          [low]="150"
-                          [medium]="225"
-                          [high]="300"
-                          [current]="275"
-                          [optimal]="250"></bullet-graph>
+                          [title]="equipmentData.unit"
+                          [low]="equipmentData.low"
+                          [medium]="equipmentData.med"
+                          [high]="equipmentData.high"
+                          [current]="equipmentData.current"
+                          [optimal]="equipmentData.optimal"></bullet-graph>
           </ion-col>
         </ion-row>
       </ion-grid>

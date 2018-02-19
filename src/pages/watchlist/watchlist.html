@@ -62,16 +62,16 @@
         <ion-row>
           <ion-col col-6>
             <doughnut [elementId]="'container-weight'"
-                      [alertsCount]="100"
+                      [alertsCount]="watchlistData[0].percentage"
                       [isGrayedGraph]="false"
-                      [alertsLabel]="'WEIGHT - WEIGHT TIME'" [percentageLabel]="true"></doughnut>
+                      [alertsLabel]="watchlistData[0].metric"></doughnut>
           </ion-col>
           <ion-col col-6>
             <doughnut [elementId]="'container-drill'"
-                      [alertsCount]="25"
+                      [alertsCount]="watchlistData[1].percentage"
                       [isGrayedGraph]="false"
-                      [alertsLabel]="'STAND DRILL TIME'"
-                      [remainingAlertsCount]="75" [percentageLabel]="true"></doughnut>
+                      [alertsLabel]="watchlistData[1].metric"
+                      [remainingAlertsCount]="watchlistData[1].rem"></doughnut>
           </ion-col>
         </ion-row>
       </ion-grid>
