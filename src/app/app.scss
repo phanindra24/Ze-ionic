@@ -47,14 +47,19 @@
 .tabs-md .tab-button[aria-selected=true] {
   font-weight: 900;
 }
-.tab-button-text {
-  color:white;
-  size: 16sp;
-  height: 18dp;
-  font-family: GEInspiraSans;
-  letter-spacing: 0.57;
-}
-.tabs-md[tabsHighlight="true"] .tab-highlight {
-  background-color: #bbd6f2;
-  height:5%;
-}
+  .tabs-md .tab-button-text {
+    color:white;
+    font-size: 16px;
+    height: 18px;
+    width:180px;
+    font-family: GEInspiraSans;
+    align-content: center;
+    letter-spacing: 0.57px;
+  }
+  .tab-button{
+    align-content: center;
+  }
+  .tabs-md[tabsHighlight="true"] .tab-highlight {
+      background-color: #bbd6f2;
+      height:5%;
+  }

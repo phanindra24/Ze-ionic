@@ -26,12 +26,13 @@ export class ProcessEquipPage {
     ];
 
   public settingsOptions:any = [
-    {label:"Process", value:"Process"},
-    {label:"Equipment", value:"Equipment"}
+    {label:"Equipment", value:"Equipment"},
+    {label:"Process", value:"Process"}
   ];
   public typeOptions:any =[
-    {label:"Drill", value:"Drill"},
-    {label:"TD Speed", value:"TDSpeed"}
+    {label:"TD Speed", value:"TDSpeed"},
+    {label:"Drill", value:"Drill"}
+
   ];
   processData: Item[];
 

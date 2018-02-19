@@ -8,7 +8,7 @@ page-process-equip {
    margin-left:49.3%;
    margin-top:-6%;
    margin-bottom:0;
-   height:48%
+   height:100%;
   }
   .my-col-1{
     align-content:center;
@@ -23,7 +23,6 @@ page-process-equip {
   letter-spacing:0.28;
   color:#aeaeae;
   font-family:GEInspiraSans;
-
   }
   .date {
   font-size:10px;
@@ -31,14 +30,36 @@ page-process-equip {
   color:#000000;
   font-family:GEInspiraSans;
   }
+ 
   .event {
-  font-size:10px;
-  letter-spacing:0.28;
+      font-size:10px;
+  letter-spacing:0.28px;
   color:#273142;
-
+  
   font-family:GEInspiraSans;
   }
   .check-point {
   height:10%;
   color:#d8d8d8;
+  }
+  .invalid {
+    position: fixed;
+    top: 50%;
+    left:40%;
+    height: 25%;
+    width:25%;
+    align-items: center;
+
+
+  }
+  .invalid-image{
+    margin-left:25%;
+    font-size :200px;
+  }
+  .invalid-content {
+    margin-left:28%;
+    font-family: GEInspiraSans;
+    font-size: 16px;
+    letter-spacing: 0.28px;
+
   }
