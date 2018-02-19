@@ -71,7 +71,7 @@ export class DoughnutComponent {
         verticalAlign: 'middle',
         style:this.isSelectedGraph ?{fontWeight:'bold'}:{fontWeight:'normal'},
         y: 8,
-        x: 4
+        x: 0
       },
       tooltip: {
         enabled: false
