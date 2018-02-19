@@ -10,11 +10,11 @@ export class Airtable {
   constructor(public api: Api) { }
 
   getTimelineData(params?: any): Observable<any> {
-    return this.api.get('Timeline%20-%20Process?api_key=keycD8huInQo9XgXJ');
+    return this.api.get('Timeline?api_key=keycD8huInQo9XgXJ');
   }
 
   getAlerts(params?: any): Observable<any>{
-    return this.api.get('Alerts?api_key=keycD8huInQo9XgXJ');
+    return this.api.get('Process%20And%20Equipment?api_key=keycD8huInQo9XgXJ');
   }
 
   delete(item: Item) {

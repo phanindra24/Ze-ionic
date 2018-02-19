@@ -34,7 +34,6 @@ export class MyApp {
   pages: any[] = [
     { title: 'Tabs', component: 'TabsPage' },
     { title: 'Alerts', component: 'AlertsPage' },
-    { title: 'Menu', component: 'MenuPage' },
     { title: 'ProcessEquip', component: 'ProcessEquipPage' },
     { title: 'WatchList', component: 'WatchlistPage' }
     

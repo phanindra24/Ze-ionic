@@ -41,7 +41,6 @@ export class ProcessEquipPage {
     this.airtable.getTimelineData().subscribe(data =>{
       this.processData=data['records'];
     })
-
   }
 
   timeSelectionChanged(value:string){
