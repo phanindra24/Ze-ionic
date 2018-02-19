@@ -8,7 +8,7 @@ page-process-equip {
    margin-left:49.3%;
    margin-top:-6%;
    margin-bottom:0;
-   height:48%
+   height:100%;
   }
   .my-col-1{
     align-content:center;
@@ -23,7 +23,6 @@ page-process-equip {
   letter-spacing:0.28;
   color:#aeaeae;
   font-family:GEInspiraSans;
-
   }
   .date {
   font-size:10px;
@@ -31,11 +30,12 @@ page-process-equip {
   color:#000000;
   font-family:GEInspiraSans;
   }
+ 
   .event {
-  font-size:10px;
-  letter-spacing:0.28;
+      font-size:10px;
+  letter-spacing:0.28px;
   color:#273142;
-
+  
   font-family:GEInspiraSans;
   }
   .check-point {
