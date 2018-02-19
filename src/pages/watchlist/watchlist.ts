@@ -58,7 +58,6 @@ export class WatchlistPage {
   }
   getData(){
     this.airtable.getWatchlist().subscribe(data => {
-      console.log(data)
       if(this.timeOptionSelectedValue==="Date1"){
       this.watchlistData[0].metric = data['records'][0].fields.Metric;
       this.watchlistData[0].percentage = data['records'][0].fields.Percentage;
@@ -81,12 +80,8 @@ export class WatchlistPage {
   }
 
   timeSelectionChangedWatchlist(value:string){
-    this.timeOptionSelectedValue = value
+    this.timeOptionSelectedValue = value;
     this.getData();
-    console.log("here")
-  }
-  timeSelectionChanged(value:string){
-    this.timeOptionSelectedValue = value
   }
 
   machineSelectionChanged(value:string){

@@ -37,7 +37,7 @@
             <single-select
               [icons]='{"Date1":"assets/imgs/calendar.png","Date2":"assets/imgs/calendar.png"}'
               [optionsArray]="timeOptionsArray"
-              (onChange)="timeSelectionChanged($event)">
+              (onChange)="timeSelectionChangedWatchlist($event)">
             </single-select>
           </ion-col>
           <ion-col col-5>
@@ -65,6 +65,7 @@
                       [alertsCount]="watchlistData[0].percentage"
                       [isGrayedGraph]="false"
                       [alertsLabel]="watchlistData[0].metric"
+                      [remainingAlertsCount]="watchlistData[0].rem"
                       [percentageLabel]="true"></doughnut>
           </ion-col>
           <ion-col col-6>

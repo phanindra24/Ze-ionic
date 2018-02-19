@@ -137,7 +137,16 @@ export class DoughnutComponent {
       title: {
         text: (this.alertsLabel === "WEIGHT - WEIGHT TIME") ? payload[0].percentage : payload[1].percentage
       },
+      series: [{
+        type: 'pie',
+        name: 'Alerts',
+        innerSize: '85%',
+        data: [
+          [this.alertsLabel, Number((this.alertsLabel === "WEIGHT - WEIGHT TIME") ? payload[0].percentage : payload[1].percentage)],
+          [this.remainingAlertsLabel, Number((this.alertsLabel === "WEIGHT - WEIGHT TIME") ? payload[0].rem : payload[1].rem)],
+        ]
+      }]
     })
   }
- 
+
 }
