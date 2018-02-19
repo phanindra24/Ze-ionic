@@ -2,8 +2,8 @@
 <div>
   <ion-list class="extra-margin-removal">
     <ion-item class="select-item">
-      <ion-label><img src={{iconSource}} class="icon-option"></ion-label>
-      <ion-select [(ngModel)]="selectedValue" interface="popover"
+      <ion-label col-4><img src="{{iconSource}}" class="custom-icon-option"></ion-label>
+      <ion-select [(ngModel)]="selectedValue" interface="popover" col-8
                   (ionChange)="optionChange($event)">
         <ion-option *ngFor="let option of optionsArray"
                     value="{{ option.value }}">{{ option.label }}</ion-option>
