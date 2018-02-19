@@ -15,26 +15,38 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WatchlistPage {
 
- public icon2: string;
-  public icon3: string;
+  public timeOptionSelectedValue:string;
+  public machineOptionSelectedValue:string;
+  public unitOptionSelectedValue:string;
   public timeOptionsArray: any = [
     {label:"12H", value:"Date1"},
     {label:"24H", value:"Date2"}
     ];
 
   public settingsOptions:any = [
-    {label:"Process", value:"Process"}
+    {label:"Process", value:"Process"},
+    {label:"Equipment", value:"Equipment"}
+
   ];
   public typeOptions:any =[
-    {label:"Drill", value:"Drill"}
+    {label:"Drill", value:"Drill"},
+    {label:"TD Speed", value:"TDSpeed"}
+
+
   ];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
- onChangeCol2(value) : void {
-   console.log('Course Value',value)
-}
- onChangeCol3(value) : void {
-   console.log('Course Value',value)
-}
+  timeSelectionChanged(value:string){
+    this.timeOptionSelectedValue = value
+  }
+
+  machineSelectionChanged(value:string){
+    this.machineOptionSelectedValue = value;
+  }
+
+  unitSelectionChanged(value:string){
+    this.unitOptionSelectedValue = value
+  }
+
 
 }
