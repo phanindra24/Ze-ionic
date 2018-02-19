@@ -26,6 +26,7 @@ export class DoughnutComponent {
   @Input() isSelectedGraph: boolean;
   @Input() isGrayedGraph: boolean = false;
   @Input() isGrayedGraphLabel: boolean = false;
+  @Input() percentageLabel:boolean=false;
   // @Input() payload:any;
 
 
@@ -36,7 +37,6 @@ export class DoughnutComponent {
     this.colors = [];
     if (this.isGrayedGraph === false) {
       this.colors = ['#bbd6f2', '#f5f5f5']
-      
     } else {
       this.colors = ['#E1ECF7', '#fbfbfb']
     }
@@ -66,12 +66,12 @@ export class DoughnutComponent {
         height: 160,
       },
       title: {
-        text: this.alertsCount,
+        text: this.percentageLabel?this.alertsCount+"%": this.alertsCount,
         align: 'center',
         verticalAlign: 'middle',
         style:this.isSelectedGraph ?{fontWeight:'bold'}:{fontWeight:'normal'},
         y: 8,
-        x: 0
+        x: 4
       },
       tooltip: {
         enabled: false

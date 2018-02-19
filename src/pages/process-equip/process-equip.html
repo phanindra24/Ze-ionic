@@ -30,81 +30,79 @@
 
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col col-3>
-        <single-select
-          [icons]='{"Date1":"assets/imgs/calendar.png","Date2":"assets/imgs/calendar.png"}'
-          [optionsArray]="timeOptionsArray"
-          (onChange)="timeSelectionChanged($event)">
-        </single-select>
-      </ion-col>
-      <ion-col col-5>
-        <single-select
-          [icons]='{"Process":"assets/imgs/process.png","Equipment":"assets/imgs/equipment.png"}'
-          [optionsArray]="settingsOptions"
-          (onChange)="machineSelectionChanged($event)">
-        </single-select>
-      </ion-col>
-      <ion-col col-4>
-        <single-select
-          [icons]='{"Drill":"assets/imgs/drill.png","TDSpeed":"assets/imgs/speed.png"}'
-          [optionsArray]="typeOptions"
-          (onChange)="unitSelectionChanged($event)">
-        </single-select>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'Drill'">
-    <ion-row style="color:black;  height: auto;">
-      <ion-col col- >
-      </ion-col>
-      <ion-col col-1 class="my-col-1">
-        <ion-icon name="arrow-dropup" style="margin-bottom:-7px;color:#d8d8d8;"></ion-icon>
-        <div class="line" style="margin-top:-7px;"> &nbsp;</div>
-      </ion-col>
-      <ion-col col-8>
-      </ion-col>
 
-    </ion-row>
-    <timeline *ngFor="let process of processData" [date]="process.fields.DateTime |  date" [time]="process.fields.DateTime |  date:'HH:mm'" event={{process.fields.Process}}></timeline>
-  </ion-grid> 
-  <!-- <div *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'Drill'">
-      <div>  <ion-icon name="code" class="invalid-image"></ion-icon></div>
-      
-      <div class="invalid-content">
-         Still under development
-         </div>
-     
-  </div> -->
+  <ion-list>
+    <ion-item class="extra-padding">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <single-select
+              [icons]='{"Date1":"assets/imgs/calendar.png","Date2":"assets/imgs/calendar.png"}'
+              [optionsArray]="timeOptionsArray"
+              (onChange)="timeSelectionChanged($event)">
+            </single-select>
+          </ion-col>
+          <ion-col col-5>
+            <single-select
+              [icons]='{"Process":"assets/imgs/process.png","Equipment":"assets/imgs/equipment.png"}'
+              [optionsArray]="settingsOptions"
+              (onChange)="machineSelectionChanged($event)">
+            </single-select>
+          </ion-col>
+          <ion-col col-4>
+            <single-select
+              [icons]='{"Drill":"assets/imgs/drill.png","TDSpeed":"assets/imgs/speed.png"}'
+              [optionsArray]="typeOptions"
+              (onChange)="unitSelectionChanged($event)">
+            </single-select>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-grid *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'Drill'">
+        <ion-row style="color:black;  height: auto;">
+          <ion-col col- >
+          </ion-col>
+          <ion-col col-1 class="my-col-1">
+            <ion-icon name="arrow-dropup" style="margin-bottom:-7px;color:#d8d8d8;"></ion-icon>
+            <div class="line" style="margin-top:-7px;"> &nbsp;</div>
+          </ion-col>
+          <ion-col col-8>
+          </ion-col>
 
-  <ion-grid *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'TDSpeed'">
-    <ion-row>
-      <ion-col col-12>
-        <bullet-graph [containerID]="'container'"
-                      [title]="'RPM'"
-                      [low]="150"
-                      [medium]="225"
-                      [high]="300"
-                      [current]="275"
-                      [optimal]="250"></bullet-graph>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <div *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'TDSpeed'">
-      <div>  <ion-icon name="code" class="invalid-image"></ion-icon>
+        </ion-row>
+        <timeline *ngFor="let process of processData" [date]="process.fields.DateTime |  date" [time]="process.fields.DateTime |  date:'HH:mm'" event={{process.fields.Process}}></timeline>
+      </ion-grid>
+      <ion-grid *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'TDSpeed'">
+        <ion-row>
+          <ion-col col-12>
+            <bullet-graph [containerID]="'container'"
+                          [title]="'RPM'"
+                          [low]="150"
+                          [medium]="225"
+                          [high]="300"
+                          [current]="275"
+                          [optimal]="250"></bullet-graph>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div *ngIf="machineOptionSelectedValue === 'Process' && unitOptionSelectedValue === 'TDSpeed'">
+        <div>  <ion-icon name="code" class="invalid-image"></ion-icon>
+        </div>
+
+        <div class="invalid-content">
+          Still under development
+        </div>  </div>
+      <div *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'Drill'">
+
+        <div>  <ion-icon name="code" class="invalid-image"></ion-icon></div>
+
+        <div class="invalid-content">
+          Still under development
+        </div>
+
       </div>
-      
-      <div class="invalid-content">
-         Still under development
-         </div>  </div>
-  <div *ngIf="machineOptionSelectedValue === 'Equipment' && unitOptionSelectedValue === 'Drill'">
-      
-      <div>  <ion-icon name="code" class="invalid-image"></ion-icon></div>
-      
- <div class="invalid-content">
-    Still under development
-    </div>
-
-  </div>
+    </ion-item>
+  </ion-list>
 </ion-content>

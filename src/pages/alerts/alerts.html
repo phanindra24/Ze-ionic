@@ -29,18 +29,32 @@
     <ion-item class="extra-padding">
       <ion-grid>
         <ion-row>
-          <ion-col col-12 class="inside-menu">
+          <ion-col col-3>
             <single-select
               [icons]='{"last12H":"assets/imgs/calendar.png","last24H":"assets/imgs/calendar.png"}'
               [optionsArray]="timeSelectValuesMap"
               (onChange)="durationChange($event)">
             </single-select>
           </ion-col>
+          <ion-col col-5>
+            <single-select [disabled]="true"
+              [icons]='{"Process":"assets/imgs/process.png","Equipment":"assets/imgs/equipment.png","default":"assets/imgs/empty icon.png"}'
+              [optionsArray]="settingsOptions"
+              (onChange)="machineSelectionChanged($event)">
+            </single-select>
+          </ion-col>
+          <ion-col col-4>
+            <single-select [disabled]="true"
+              [icons]='{"Drill":"assets/imgs/drill.png","TDSpeed":"assets/imgs/speed.png","default":"assets/imgs/empty icon.png"}'
+              [optionsArray]="typeOptions"
+              (onChange)="unitSelectionChanged($event)">
+            </single-select>
+          </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
     <ion-item class="extra-padding">
-      <ion-grid>
+      <ion-grid style="padding-left: 16px">
         <ion-row>
           <ion-col>
             <p class="total-alerts">{{currentAlertsData.total}}</p>
@@ -68,14 +82,14 @@
       </ion-grid>
     </ion-item>
     <ion-item class="extra-padding">
-      <div *ngIf="isTotalAlertsGraphSelected; else equipmentSubAlert">
+      <div *ngIf="isTotalAlertsGraphSelected; else equipmentSubAlert" style="padding-left: 16px;">
         <sub-alerts [text]="'Drilling'" [value]="currentAlertsData.process.drilling"></sub-alerts>
         <sub-alerts [text]="'Tripping Out'" [value]="currentAlertsData.process.trippingOut"></sub-alerts>
         <sub-alerts [text]="'Tripping In'" [value]="currentAlertsData.process.trippingIn"></sub-alerts>
       </div>
       <ng-template #equipmentSubAlert>
         <div>
-          <sub-alerts [text]="'Maintanance'" [value]="currentAlertsData.equipment.maintainance"></sub-alerts>
+          <sub-alerts [text]="'Maintanance'" [value]="currentAlertsData.equipment.maintainance" style="padding-left: 16px;"></sub-alerts>
         </div>
       </ng-template>
     </ion-item>

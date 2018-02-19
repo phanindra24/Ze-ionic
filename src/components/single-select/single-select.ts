@@ -16,6 +16,7 @@ export class SingleSelectComponent {
   @Input() optionsArray:any;
   @Input() icons: any;
   @Output() onChange = new EventEmitter<string>();
+  @Input() disabled:boolean = false;
 
 
   public selectedValue:string = '';
@@ -28,8 +29,12 @@ export class SingleSelectComponent {
   }
 
   ngAfterViewInit(){
-    this.selectedValue = this.optionsArray[0].value;
-    this.onChange.emit(this.selectedValue);
+    if (this.optionsArray && !this.disabled){
+      this.selectedValue = this.optionsArray[0].value;
+      this.onChange.emit(this.selectedValue);
+    }else {
+      this.iconSource = this.icons['default']
+    }
   }
 
 }

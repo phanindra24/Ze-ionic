@@ -60,15 +60,15 @@ export class AlertsPage {
       maintainance: 100,
     }
   }
-  ]
+  ];
 
 
 
   public isTotalAlertsGraphSelected: boolean = true;
 
   timeSelectValuesMap: any = [
-    { label: "Last 12H", value: "last12H" },
-    { label: "Last 24H", value: "last24H" },
+    { label: "12H", value: "last12H" },
+    { label: "24H", value: "last24H" },
   ];
 
   constructor(public navCtrl: NavController, public airtable: Airtable) { }
