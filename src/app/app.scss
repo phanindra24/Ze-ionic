@@ -15,33 +15,37 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+@font-face {
+  font-family: GEInspiraSans;
+  src:url("../assets/GE Inspira Sans/Software (TTF)/GEInspiraSans.ttf") format('trueType');
+  font-weight: normal;
+  font-style:normal;
+}
 .toolbar-background-md {
-    background-color: #273142;
+  background-color: #273142;
+}
 
-  }
-
-  .toolbar-content-md {
-    background-color: #273142;
-    flex-direction: row;
-  }
-  .menu-button {
-    background-color: #273142;
-    color:white;
-    height: 30px;
-  }
-  .toolbar-title {
-    color:white;
- font-weight:bold;
-font-family:GEInspiraSans;
-    font-size:24px;
-    letter-spacing:0.57px;
-  }
-  .tabs-md .tabbar {
-    background-color: #273142;
-  }
-  .tabs-md .tab-button[aria-selected=true] {
-      font-weight: 900;
-      width:30px;
+.toolbar-content-md {
+  background-color: #273142;
+  flex-direction: row;
+}
+.menu-button {
+  background-color: #273142;
+  color:white;
+  height: 30px;
+}
+.toolbar-title {
+  color:white;
+  font-weight:bold;
+  font-family:GEInspiraSans;
+  font-size:24px;
+  letter-spacing:0.57px;
+}
+.tabs-md .tabbar {
+  background-color: #273142;
+}
+.tabs-md .tab-button[aria-selected=true] {
+  font-weight: 900;
 }
   .tabs-md .tab-button-text {
     color:white;
@@ -59,10 +63,3 @@ font-family:GEInspiraSans;
       background-color: #bbd6f2;
       height:5%;
   }
-
-@font-face {
-  font-family: GEInspiraSans;
-  src:url("../assets/GE Inspira Sans/Software (TTF)/GEInspiraSans.ttf") format('trueType');
-  font-weight: normal;
-  font-style:normal;
-}

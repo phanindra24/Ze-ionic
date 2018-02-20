@@ -49,7 +49,7 @@ export class BulletGraphComponent {
           color: '#000',
           targetOptions: {
             width: '200%',
-            color: '#5699de'
+            color: '#1991EB'
           }
         }
       },

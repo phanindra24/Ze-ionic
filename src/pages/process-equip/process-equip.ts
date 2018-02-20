@@ -35,6 +35,14 @@ export class ProcessEquipPage {
 
   ];
   processData: Item[];
+  equipmentData:any={
+    unit:"RPM",
+    low:150,
+    med:225,
+    high:300,
+    current:275,
+    optimal:250
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public airtable: Airtable) {
   }
@@ -42,7 +50,14 @@ export class ProcessEquipPage {
     this.airtable.getTimelineData().subscribe(data =>{
       this.processData=data['records'];
     })
-
+    this.airtable.getEquipmentMetric().subscribe(data =>{
+      this.equipmentData.unit=data['records'][0].fields['Unit'];
+      this.equipmentData.low=data['records'][0].fields['Low'];
+      this.equipmentData.med=data['records'][0].fields['Medium'];
+      this.equipmentData.high=data['records'][0].fields['High'];
+      this.equipmentData.current=data['records'][0].fields['Current'];
+      this.equipmentData.optimal=data['records'][0].fields['Optimal'];
+    })
   }
 
   timeSelectionChanged(value:string){

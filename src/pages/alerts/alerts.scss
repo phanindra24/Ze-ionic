@@ -1,16 +1,16 @@
 
-  .menu-button {
-    background-color: #273142;
-    height:40px;
-  }
-  .notifications {
-    right:10px;
-    color:white;
+.menu-button {
+  background-color: #273142;
+  height:40px;
+}
+.notifications {
+  right:10px;
+  color:white;
 
-  }
-  .row {
-    color:white;
-  }
+}
+.row {
+  color:white;
+}
 
   .menu {
     left: 10px;
@@ -24,32 +24,41 @@
             border-radius: 100%;
         }
 
-        page-alerts {
-          font-family: GEInspiraSans;
-        }
+page-alerts {
+  font-family: GEInspiraSans;
+}
 
-        .total-alerts{
-          font-size: 44px;
-          letter-spacing: 0.04px;
-          color: #bbd6f2;
-          margin: 0;
-        }
+.total-alerts{
+  font-size: 44px !important;
+  letter-spacing: 0.04px !important;
+  color: #bbd6f2 !important;
+  margin: 0!important;
+}
 
-        .total-alerts-label{
-          font-size: 12px;
-          margin: 0;
-          color: #aeaeae;
-        }
+.total-alerts-label{
+  font-size: 12px !important;
+  margin: 0 !important;
+  color: #aeaeae !important;
+}
 
-        .unacknowledged{
-          font-size: 44px;
-          letter-spacing: 0.04px;
-          margin: 0;
-          color: #273142;
-        }
+.unacknowledged{
+  font-size: 44px !important;
+  letter-spacing: 0.04px !important;
+  margin: 0 !important;
+  color: #273142 !important;
+}
 
-        .unacknowledged-label{
-          font-size: 12px;
-          margin: 0;
-          color: #aeaeae;
-        }
+.unacknowledged-label{
+  font-size: 12px !important;
+  margin: 0 !important;
+  color: #aeaeae !important;
+}
+
+.extra-padding{
+  padding-left: 0;
+  margin: 0;
+}
+
+.extra-padding > .item-inner > .input-wrapper > .label-md{
+  margin: 0;
+}
